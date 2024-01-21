@@ -1,0 +1,14 @@
+<mat-list>
+    @for (menu of menuList(); track menu.descricao) {
+        <mat-list-item>
+            <a  [routerLink]="menu.routerLink"
+                routerLinkActive="active"
+                #rla="routerLinkActive">
+                <mat-icon [fontSet]="rla.isActive ? 'material-icons' : 'material-icons-outlined'">{{menu.icone}}</mat-icon>
+                @if (!sidenavCollapsed) {
+                    <span class="link-name">{{menu.descricao}}</span>
+                }
+            </a>
+        </mat-list-item>
+    }
+</mat-list>

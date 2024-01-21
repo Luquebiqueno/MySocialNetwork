@@ -1,0 +1,36 @@
+mat-list {
+    mat-list-item {
+        a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            position: relative;
+            mat-icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #2c3333;
+            }
+            .link-name {
+                margin-left: 20px;
+                color: #2c3333;
+            }
+        }
+        a.active {   
+            .link-name {
+              color: #5a5f63;
+            }
+            mat-icon {
+                color: #5a5f63;
+            }
+        }
+        a:hover {
+            mat-icon {
+                color: #5a5f63;
+            }
+            .link-name {
+                color: #5a5f63;
+            }
+        }
+    }
+}
