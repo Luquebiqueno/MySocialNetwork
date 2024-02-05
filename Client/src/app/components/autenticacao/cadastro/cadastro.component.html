@@ -3,45 +3,74 @@
         <mat-card-header>
             <mat-card-title>Cadastro</mat-card-title>
         </mat-card-header>
-        <form (formValueChange)="usuario.set($event)">
+        <form [formGroup]="form">
             <mat-card-content>
                 <div>
                     <mat-form-field appearance="outline">
                         <mat-label>Nome</mat-label>
-                        <input type="text" id="nome" [ngModel]="usuario().nome" name="nome" matInput required>
+                        <input type="text" id="nome" formControlName="nome" matInput required>
+                        @if (form.hasError('required', 'nome')) {
+                            <mat-error>
+                                Campo obrigatório.
+                            </mat-error>
+                        }
                     </mat-form-field>
                 </div>
                 <div>
                     <mat-form-field appearance="outline">
                         <mat-label>E-mail</mat-label>
-                        <input type="email" id="email" [ngModel]="usuario().email" name="email" matInput required>
+                        <input type="email" id="email" formControlName="email" matInput required>
+                        @if (form.hasError('required', 'email')) {
+                            <mat-error>
+                                Campo obrigatório.
+                            </mat-error>
+                        }
+                        @if (form.hasError('email', 'email')) {
+                            <mat-error>
+                                O email é inválido.
+                            </mat-error>
+                        }
                     </mat-form-field>
                 </div>
                 <div>
                     <mat-form-field appearance="outline">
                         <mat-label>Telefone</mat-label>
-                        <input type="text" id="telefone" [ngModel]="usuario().telefone" name="telefone"  matInput>
+                        <input type="text" id="telefone" formControlName="telefone" matInput>
                     </mat-form-field>
                 </div>
                 <div>
                     <mat-form-field appearance="outline">
                         <mat-label>Senha</mat-label>
-                        <input [type]="hide() ? 'password' : 'text'" id="senha" [(ngModel)]="usuario().senha" name="senha" 
-                            autocomplete="off" matInput required>
+                        <input [type]="hide() ? 'password' : 'text'" id="senha" formControlName="senha" autocomplete="off" matInput required>
+                        @if (form.hasError('required', 'senha')) {
+                            <mat-error>
+                                Campo obrigatório.
+                            </mat-error>
+                        }
+                        @if (form.hasError('passwordStrength', 'senha')) {
+                            <mat-error>
+                                {{form.get('senha').errors['passwordStrength']}}
+                            </mat-error>
+                        }
                     </mat-form-field>
                 </div>
                 <div>
                     <mat-form-field appearance="outline">
                         <mat-label>Confirmar Senha</mat-label>
-                        <input [type]="hide() ? 'password' : 'text'" id="confirmarSenha" matInput required [errorStateMatcher]="matcher()">
-                        <button mat-icon-button matSuffix (click)="hide.set(!hide())" [attr.aria-label]="'Hide password'" 
-                            autocomplete="off" [attr.aria-pressed]="hide()">
+                        <input [type]="hide() ? 'password' : 'text'" id="confirmarSenha" formControlName="confirmarSenha" matInput required 
+                            [errorStateMatcher]="matcher()" autocomplete="off">
+                        <button mat-icon-button matSuffix (click)="hide.set(!hide())" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide()">
                             <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
                         </button>
+                        @if (form.hasError('notSame')) {
+                            <mat-error>
+                                Os campos precisam ser iguais.
+                            </mat-error>
+                        }
                     </mat-form-field>
                 </div>
                 <div class="btn-div">
-                    <button mat-flat-button type="submit" (click)="createUsuario()">Cadastrar</button>
+                    <button mat-flat-button type="submit" (click)="createUsuario()" [disabled]="form.invalid">Cadastrar</button>
                 </div>
                 <div class="login-signup">
                     <span class="text"> Já tem uma conta?
@@ -52,4 +81,3 @@
         </form>
     </mat-card>
 </div>
-

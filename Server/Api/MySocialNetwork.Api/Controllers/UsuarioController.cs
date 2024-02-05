@@ -75,11 +75,7 @@ namespace MySocialNetwork.Api.Controllers
             if (model == null)
                 return BadRequest();
 
-            var usuario = model.Model();
-
-            await _application.CreateAsync(usuario);
-
-            return Ok();
+            return Ok(await _application.CreateAsync(model.Model()));
         }
 
         [HttpPut]
@@ -93,10 +89,7 @@ namespace MySocialNetwork.Api.Controllers
             if (model == null)
                 return BadRequest();
 
-            var usuario = model.Model();
-
-            await _application.UpdateUsuarioAsync(id, usuario);
-            return Ok();
+            return Ok(await _application.UpdateUsuarioAsync(id, model.Model()));
 
         }
 
