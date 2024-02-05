@@ -6,4 +6,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domain\MySocialNetwork.Domain\MySocialNetwork.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="MySocialNetwork.Common">
+      <HintPath>..\..\Assemblies\MySocialNetwork.Common.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

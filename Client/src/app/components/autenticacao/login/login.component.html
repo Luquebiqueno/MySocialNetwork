@@ -1,0 +1,30 @@
+<div class="container">
+    <form (formValueChange)="usuarioLogin.set($event)">
+        <mat-card>
+            <mat-card-content>
+                <div>
+                    <mat-form-field appearance="outline">
+                        <input type="text" id="login" name="login" [ngModel]="usuarioLogin().login" placeholder="Email ou Telefone" matInput>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="outline">
+                        <input type="password" id="senha" name="senha" [ngModel]="usuarioLogin().senha" placeholder="Senha"
+                            autocomplete="on" matInput>
+                    </mat-form-field>
+                </div>
+                <div class="esqueci-minha-senha-text">
+                    <a href="javascript:void(0)" (click)="esqueciMinhaSenha()" class="text">Esqueci minha senha</a>
+                </div>
+                <div class="btn-div">
+                    <button mat-raised-button (click)="login()" type="submit">Login</button>
+                </div>
+                <div class="login-signup">
+                    <span class="text"> Ainda não tem uma conta?
+                        <a href="javascript:void(0)" (click)="exibirPainelCadastro()" class="text signup-text">Cadastre-se</a>
+                    </span>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </form>
+</div>

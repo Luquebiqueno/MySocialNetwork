@@ -4,7 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <InvariantGlobalization>true</InvariantGlobalization>
+    <InvariantGlobalization>false</InvariantGlobalization>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,6 +17,17 @@
 
   <ItemGroup>
     <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Application\MySocialNetwork.Application\MySocialNetwork.Application.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\MySocialNetwork.Repository\MySocialNetwork.Repository.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="MySocialNetwork.Common">
+      <HintPath>..\..\Assemblies\MySocialNetwork.Common.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

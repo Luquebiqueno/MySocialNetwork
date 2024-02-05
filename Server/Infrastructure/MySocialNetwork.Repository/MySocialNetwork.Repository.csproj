@@ -11,4 +11,14 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domain\MySocialNetwork.Domain\MySocialNetwork.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="MySocialNetwork.Common">
+      <HintPath>..\..\Assemblies\MySocialNetwork.Common.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

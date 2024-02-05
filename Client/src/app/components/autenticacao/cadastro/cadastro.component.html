@@ -1,0 +1,55 @@
+<div class="container">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Cadastro</mat-card-title>
+        </mat-card-header>
+        <form (formValueChange)="usuario.set($event)">
+            <mat-card-content>
+                <div>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Nome</mat-label>
+                        <input type="text" id="nome" [ngModel]="usuario().nome" name="nome" matInput required>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="outline">
+                        <mat-label>E-mail</mat-label>
+                        <input type="email" id="email" [ngModel]="usuario().email" name="email" matInput required>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Telefone</mat-label>
+                        <input type="text" id="telefone" [ngModel]="usuario().telefone" name="telefone"  matInput>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Senha</mat-label>
+                        <input [type]="hide() ? 'password' : 'text'" id="senha" [(ngModel)]="usuario().senha" name="senha" 
+                            autocomplete="off" matInput required>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Confirmar Senha</mat-label>
+                        <input [type]="hide() ? 'password' : 'text'" id="confirmarSenha" matInput required [errorStateMatcher]="matcher()">
+                        <button mat-icon-button matSuffix (click)="hide.set(!hide())" [attr.aria-label]="'Hide password'" 
+                            autocomplete="off" [attr.aria-pressed]="hide()">
+                            <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </div>
+                <div class="btn-div">
+                    <button mat-flat-button type="submit" (click)="createUsuario()">Cadastrar</button>
+                </div>
+                <div class="login-signup">
+                    <span class="text"> Já tem uma conta?
+                        <a href="javascript:void(0)" class="text" (click)="exibirPainelLogin()">Faça login</a>
+                    </span>
+                </div>
+            </mat-card-content>
+        </form>
+    </mat-card>
+</div>
+
