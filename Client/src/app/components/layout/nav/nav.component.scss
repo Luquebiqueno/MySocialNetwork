@@ -9,12 +9,15 @@ mat-toolbar {
 
 mat-sidenav-container {
     height: calc(100vh - 64px);
+    background: transparent !important;
 }
 
 .content {
     padding: 20px;
 }
 
-mat-sidenav, mat-sidenav-content {
-    transition: all 500ms ease-in-out;
+mat-sidenav {
+    background: #f1f5f9;
+    border-right-color: #f1f5f9;;
+    width: 90px;
 }

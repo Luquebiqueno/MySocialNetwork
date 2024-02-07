@@ -1,9 +1,10 @@
-import { Component, computed, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, signal } from '@angular/core';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatBadgeModule } from '@angular/material/badge';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 
 @Component({
@@ -11,10 +12,12 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
 	standalone: true,
 	imports: [
 		RouterOutlet,
+		RouterLink,
     	MatIconModule,
     	MatButtonModule,
     	MatToolbarModule,
     	MatSidenavModule,
+		MatBadgeModule,
     	SidebarComponent
 	],
 	templateUrl: './nav.component.html',
@@ -22,5 +25,6 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
 })
 export class NavComponent {
 	collapsed = signal(true);
-	sidenavWidth = computed(() => this.collapsed() ? '65px' : '200px');
+	qtdNotificacao = signal(35);
+	qtdMensagem = signal(15);
 }

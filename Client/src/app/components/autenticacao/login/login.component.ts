@@ -37,7 +37,7 @@ export class LoginComponent {
                 if (usuarioAutenticado && usuarioAutenticado.accessToken) {
                     localStorage['usuarioAutenticado'] = JSON.stringify(usuarioAutenticado);
                     //this.notifierService.showNotification(usuarioAutenticado.message,'Sucesso', 'success');
-                    this.router.navigate(['dashboard']);
+                    this.router.navigate(['home']);
                 } else {
                     //this.notifierService.showNotification('Ocorreu um erro ao autenticar.','Erro', 'error');
                 }

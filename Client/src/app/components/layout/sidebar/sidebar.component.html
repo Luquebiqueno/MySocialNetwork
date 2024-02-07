@@ -4,11 +4,19 @@
             <a  [routerLink]="menu.routerLink"
                 routerLinkActive="active"
                 #rla="routerLinkActive">
-                <mat-icon [fontSet]="rla.isActive ? 'material-icons' : 'material-icons-outlined'">{{menu.icone}}</mat-icon>
-                @if (!sidenavCollapsed) {
-                    <span class="link-name">{{menu.descricao}}</span>
-                }
+                <div class="link-name">
+                    <mat-icon [fontSet]="rla.isActive ? 'material-icons' : 'material-icons-outlined'">{{menu.icone}}</mat-icon>
+                </div>
+                <div class="link-name">{{menu.descricao}}</div>
             </a>
         </mat-list-item>
     }
+    <mat-list-item>
+        <a (click)="abrirModalCriar()">
+            <div class="link-name">
+                <mat-icon [fontSet]="'material-icons-outlined'">add_box</mat-icon>
+            </div>
+            <div class="link-name">Criar</div>
+        </a>
+    </mat-list-item>
 </mat-list>

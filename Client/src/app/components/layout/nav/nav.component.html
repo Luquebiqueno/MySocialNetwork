@@ -1,12 +1,17 @@
 <mat-toolbar class="mat-elevation-z3">
     <div>
-        <button mat-icon-button (click)="collapsed.set(!collapsed())">
-            <mat-icon>menu</mat-icon>
-        </button>
+        MySocialNetwork
     </div>
     <div>
-        <button mat-icon-button>
-            <mat-icon fontSet="material-icons-outlined">notifications_unread</mat-icon>
+        <button mat-icon-button [routerLink]="'chat'">
+            <mat-icon aria-hidden="false" [matBadge]="qtdMensagem()" matBadgeColor="warn" fontSet="material-icons-outlined">
+                chat
+            </mat-icon>
+        </button>
+        <button mat-icon-button [routerLink]="'notificacoes'">
+            <mat-icon aria-hidden="false" [matBadge]="qtdNotificacao()" matBadgeColor="warn" fontSet="material-icons-outlined">
+                notifications
+            </mat-icon>
         </button>
         <button mat-icon-button>
             <mat-icon>more_vert</mat-icon>
@@ -14,10 +19,15 @@
     </div>
 </mat-toolbar>
 <mat-sidenav-container>
-    <mat-sidenav opened mode="side" [style.width]="sidenavWidth()">
-        <app-sidebar [sidenavCollapsed]="collapsed()" />
+    <mat-sidenav opened mode="side">
+        <app-sidebar />
     </mat-sidenav>
-    <mat-sidenav-content class="content" [style.margin-left]="sidenavWidth()">
-        <router-outlet></router-outlet>
+    <mat-sidenav-content>
+        <div class="content">
+            <router-outlet />
+        </div>
+        <footer style="position: absolute; bottom: 0;">
+            <span style="text-align: center; font-size: 10px;">&copy; 2024 - Todos direitos reservados</span>
+        </footer>
     </mat-sidenav-content>
 </mat-sidenav-container>
