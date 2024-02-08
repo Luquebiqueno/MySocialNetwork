@@ -27,4 +27,5 @@ export class NavComponent {
 	collapsed = signal(true);
 	qtdNotificacao = signal(35);
 	qtdMensagem = signal(15);
+	year = new Date().getFullYear();
 }

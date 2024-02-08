@@ -16,8 +16,31 @@ mat-sidenav-container {
     padding: 20px;
 }
 
+a {
+    color: #000;
+    margin-left: 20px;
+}
+
+img {
+    border-radius: 100%;
+    object-fit: cover;
+    width: 33px;
+    height: 33px;
+}
+
 mat-sidenav {
     background: #f1f5f9;
     border-right-color: #f1f5f9;;
     width: 90px;
+}
+
+footer {
+    position: absolute; 
+    bottom: 0; 
+    width: 100%;
+    div {
+        text-align: center; 
+        font-size: 11px;
+        font-weight: 500;
+    }
 }
