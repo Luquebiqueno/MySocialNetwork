@@ -22,6 +22,11 @@ import { CriarComponent } from '../../criar/criar.component';
 	styleUrl: './sidebar.component.scss'
 })
 export class SidebarComponent implements OnInit {
+	@Input({
+		required: true,
+			transform: (value: boolean) => value
+		})
+	sidenavCollapsed = signal(false);
 	menuList = signal<Menu[]>([]);
 
 	private menuService = inject(MenuService);

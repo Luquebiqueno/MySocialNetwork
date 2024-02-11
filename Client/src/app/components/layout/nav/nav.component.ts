@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -24,7 +24,8 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
 	styleUrl: './nav.component.scss'
 })
 export class NavComponent {
-	collapsed = signal(true);
+	collapsed = signal(false);
+	sidenavWidth = computed(() => this.collapsed() ? '65px' : '220px');
 	qtdNotificacao = signal(35);
 	qtdMensagem = signal(15);
 	year = new Date().getFullYear();

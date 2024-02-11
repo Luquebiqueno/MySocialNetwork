@@ -1,29 +1,27 @@
 mat-list {
-    margin-top: 20px;
     mat-list-item {
+        width: 100% !important;
         a {
+            display: flex;
+            align-items: center;
             text-decoration: none;
             position: relative;
+            color: #424662;
+            width: 100%;
             .link-name {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: #000;
-                font-size: 10px;
-                font-weight: 500;
-                line-height: 16px;
-                letter-spacing: .1px;
+                margin-left: 20px;
             }
         }
-        a.active {   
-            .link-name {
-              color: #000;
-            }
+    }
+
+    mat-list-item.active {
+        background: #605DFF10;
+    }
+
+    mat-list-item:hover {
+        a {
+            color: #605dff;
         }
-        a:hover {
-            .link-name {
-                color: #000;
-            }
-        }
+
     }
 }

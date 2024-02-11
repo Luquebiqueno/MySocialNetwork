@@ -1,14 +1,17 @@
 <mat-toolbar class="mat-elevation-z3">
-    <div>
-        MySocialNetwork
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <button mat-icon-button (click)="collapsed.set(!collapsed())">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <div style="text-align: center;">MySocialNetwork</div>
     </div>
     <div>
-        <a href="javascript:void(0)" [routerLink]="'chat'">
+        <a href="javascript:void(0)" class="nav-bar-link" [routerLink]="'chat'">
             <mat-icon aria-hidden="false" [matBadge]="qtdMensagem()" matBadgeColor="warn" fontSet="material-icons-outlined">
                 chat
             </mat-icon>
         </a>
-        <a href="javascript:void(0)" [routerLink]="'notificacoes'">
+        <a href="javascript:void(0)" class="nav-bar-link " [routerLink]="'notificacoes'">
             <mat-icon aria-hidden="false" [matBadge]="qtdNotificacao()" matBadgeColor="warn" fontSet="material-icons-outlined">
                 notifications
             </mat-icon>
@@ -19,17 +22,22 @@
     </div>
 </mat-toolbar>
 <mat-sidenav-container>
-    <mat-sidenav opened mode="side">
-        <app-sidebar />
+    <mat-sidenav opened mode="side" position="start" [style.width]="sidenavWidth()">
+        <app-sidebar [sidenavCollapsed]="collapsed()" />
     </mat-sidenav>
-    <mat-sidenav-content>
+    <mat-sidenav opened mode="side" position="end" [style.width]="'300px'" style="border:0px;">
         <div class="content">
-            <router-outlet />
+            Oiiiiiiiiiii
         </div>
         <footer>
             <div>
                 <span>&copy; {{year}} - Todos direitos reservados</span>
             </div>
         </footer>
+    </mat-sidenav>
+    <mat-sidenav-content [style.margin-left]="sidenavWidth()">
+        <div class="content">
+            <router-outlet />
+        </div>
     </mat-sidenav-content>
 </mat-sidenav-container>

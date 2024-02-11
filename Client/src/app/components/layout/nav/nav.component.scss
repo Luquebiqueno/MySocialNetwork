@@ -4,21 +4,23 @@ mat-toolbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: transparent;
 }
 
 mat-sidenav-container {
     height: calc(100vh - 64px);
-    background: transparent !important;
 }
 
 .content {
     padding: 20px;
 }
 
-a {
+mat-sidenav, mat-sidenav-content {
+    transition: all 500ms ease-in-out;
+}
+
+.nav-bar-link {
     color: #000;
-    margin-left: 20px;
+    margin-right: 20px;
 }
 
 img {
@@ -26,12 +28,6 @@ img {
     object-fit: cover;
     width: 33px;
     height: 33px;
-}
-
-mat-sidenav {
-    background: #f1f5f9;
-    border-right-color: #f1f5f9;;
-    width: 90px;
 }
 
 footer {
@@ -44,3 +40,4 @@ footer {
         font-weight: 500;
     }
 }
+
