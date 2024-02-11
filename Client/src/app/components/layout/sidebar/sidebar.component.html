@@ -1,7 +1,7 @@
 <mat-list>
     @for (menu of menuList(); track menu.descricao) {
         <mat-list-item [routerLink]="menu.routerLink" routerLinkActive="active" #rla="routerLinkActive">
-            <a>
+            <a href="javascript:void(0)">
                 <mat-icon [fontSet]="'material-icons-outlined'">{{menu.icone}}</mat-icon>
                 @if (!sidenavCollapsed) {
                     <span class="link-name">{{menu.descricao}}</span>
@@ -9,13 +9,4 @@
             </a>
         </mat-list-item>
     }
-
-    <mat-list-item>
-        <a href="javascript:void(0)" (click)="abrirModalCriar()">
-            <mat-icon [fontSet]="'material-icons-outlined'">add_box</mat-icon>
-            @if (!sidenavCollapsed) {
-                <span class="link-name">Criar</span>
-            }
-        </a>
-    </mat-list-item>
 </mat-list>

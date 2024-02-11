@@ -6,7 +6,7 @@ mat-list {
             align-items: center;
             text-decoration: none;
             position: relative;
-            color: #424662;
+            color: #000;
             width: 100%;
             .link-name {
                 margin-left: 20px;
@@ -14,8 +14,16 @@ mat-list {
         }
     }
 
+    mat-list-item::before {
+        background: transparent !important;
+    }
+
     mat-list-item.active {
         background: #605DFF10;
+        cursor: pointer;
+        a {
+            font-weight: 500;
+        }
     }
 
     mat-list-item:hover {

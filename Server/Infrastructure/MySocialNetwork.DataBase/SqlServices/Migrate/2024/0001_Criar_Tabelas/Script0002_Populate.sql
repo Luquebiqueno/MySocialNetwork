@@ -64,3 +64,24 @@ Begin
 End
 Go
 
+If Not Exists (Select 1 From SistemaMenu (Nolock) Where Descricao = 'Criar' And ParentId Is Null) 
+Begin
+	Insert Into SistemaMenu
+	(
+		 ParentId
+		,Descricao
+		,Icone
+		,RouterLink
+		,Ordem
+		,Ativo
+	)
+	Select
+		 ParentId	= Null
+		,Descricao	= 'Criar'
+		,Icone		= 'add_box'
+		,RouterLink	= 'criar'
+		,Ordem		= 4
+		,Ativo		= 1
+End
+Go
+
