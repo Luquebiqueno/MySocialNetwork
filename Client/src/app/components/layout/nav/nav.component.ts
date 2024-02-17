@@ -25,7 +25,7 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
 })
 export class NavComponent {
 	collapsed = signal(false);
-	sidenavWidth = computed(() => this.collapsed() ? '65px' : '220px');
+	sidenavWidth = computed(() => this.collapsed() ? '65px' : '200px');
 	qtdNotificacao = signal(35);
 	qtdMensagem = signal(15);
 	year = new Date().getFullYear();

@@ -33,3 +33,18 @@ Begin
 	)
 End
 Go
+
+If Object_Id('Publicacao') Is Null 
+Begin
+	Create Table Publicacao 
+	(
+		 PublicacaoId		BigInt Identity(1,1) Primary Key
+		,Texto				Varchar(Max)	Not Null
+		,DataCadastro		DateTime		Not Null
+		,UsuarioCadastro	Int				Not	Null
+		,DataAlteracao		DateTime			Null
+		,UsuarioAlteracao	Int					Null
+		,Ativo				Bit				Not Null Default(1)
+	)
+End
+Go

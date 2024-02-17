@@ -16,10 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\Application\MySocialNetwork.Application\MySocialNetwork.Application.csproj" />
     <ProjectReference Include="..\..\Infrastructure\MySocialNetwork.Repository\MySocialNetwork.Repository.csproj" />
   </ItemGroup>

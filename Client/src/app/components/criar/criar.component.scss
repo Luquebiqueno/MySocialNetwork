@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    mat-card {
+        min-height: 320px;
+        width: 100%;
+        mat-card-title {
+            font-weight: 600;
+        }
+        mat-form-field {
+            width: 100%;
+        }
+        .div-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 20px;
+            .btn-salvar{
+                min-width: 100px;
+            } 
+            .btn-voltar{
+                min-width: 100px;
+            } 
+        }
+    }
+}

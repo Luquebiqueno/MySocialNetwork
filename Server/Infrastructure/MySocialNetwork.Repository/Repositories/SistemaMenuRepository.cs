@@ -20,22 +20,22 @@ namespace MySocialNetwork.Repository.Repositories
         public async Task<List<SistemaMenuDto>> GetMenu()
         {
             var lista = await _dbSet.Include(x => x.Children.Where(w => w.Ativo).OrderBy(w => w.Ordem))
-                                         .Where(y => y.Ativo && y.ParentId == null)
-                                         .OrderBy(z => z.Ordem)
-                                         .ToListAsync();
+                                    .Where(y => y.Ativo && y.ParentId == null)
+                                    .OrderBy(z => z.Ordem)
+                                    .ToListAsync();
 
             return lista.Select(x => new SistemaMenuDto
-                   {
-                       Descricao = x.Descricao,
-                       Icone = x.Icone,
-                       RouterLink = x.RouterLink,
-                       Children = x.Children.Any() ? x.Children.Select(y => new SistemaSubMenuDto
-                       {
-                           Descricao = y.Descricao,
-                           Icone = y.Icone,
-                           RouterLink = y.RouterLink
-                       }).ToList() : null
-                   }).ToList(); 
+            {
+                Descricao = x.Descricao,
+                Icone = x.Icone,
+                RouterLink = x.RouterLink,
+                Children = x.Children.Any() ? x.Children.Select(y => new SistemaSubMenuDto
+                {
+                    Descricao = y.Descricao,
+                    Icone = y.Icone,
+                    RouterLink = y.RouterLink
+                }).ToList() : null
+            }).ToList(); 
         }
     }
 }

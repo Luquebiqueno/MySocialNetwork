@@ -40,18 +40,21 @@ builder.Services.AddScoped<DbSession>();
 builder.Services.AddTransient(typeof(IRepositoryBase<,,>), typeof(RepositoryBase<,,>));
 builder.Services.AddScoped(typeof(ISistemaMenuRepository<>), typeof(SistemaMenuRepository<>));
 builder.Services.AddScoped(typeof(IUsuarioRepository<>), typeof(UsuarioRepository<>));
+builder.Services.AddScoped(typeof(IPublicacaoRepository<>), typeof(PublicacaoRepository<>));
 
 //Service
 builder.Services.AddTransient(typeof(IServiceBase<,,>), typeof(ServiceBase<,,>));
 builder.Services.AddScoped(typeof(ISistemaMenuService<>), typeof(SistemaMenuService<>));
 builder.Services.AddScoped(typeof(IUsuarioService<>), typeof(UsuarioService<>));
 builder.Services.AddScoped(typeof(IAutenticacaoService<>), typeof(AutenticacaoService<>));
+builder.Services.AddScoped(typeof(IPublicacaoService<>), typeof(PublicacaoService<>));
 
 //Application
 builder.Services.AddTransient(typeof(IApplicationBase<,,>), typeof(ApplicationBase<,,>));
 builder.Services.AddScoped(typeof(ISistemaMenuApplication<>), typeof(SistemaMenuApplication<>));
 builder.Services.AddScoped(typeof(IUsuarioApplication<>), typeof(UsuarioApplication<>));
 builder.Services.AddScoped(typeof(IAutenticacaoApplication<>), typeof(AutenticacaoApplication<>));
+builder.Services.AddScoped(typeof(IPublicacaoApplication<>), typeof(PublicacaoApplication<>));
 
 //Inicio Autenticação
 var tokenConfiguration = new TokenConfiguration();

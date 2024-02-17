@@ -1,1 +1,30 @@
-<p>criar works!</p>
+<div class="container">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Faça uma publicação</mat-card-title>
+        </mat-card-header>
+        <form [formGroup]="form">
+            <mat-card-content>
+                <mat-form-field appearance="outline">
+                    <textarea id="texto" formControlName="texto"
+                        cdkTextareaAutosize
+                        #autosize="cdkTextareaAutosize"
+                        rows="4" cols="50"
+                        matInput
+                        placeholder="Digite um texto" required>
+                    </textarea>
+                </mat-form-field>
+                <div style="margin-bottom: 10px;">
+                    <a>
+                        <mat-icon aria-hidden="false" fontSet="material-icons-outlined">add_a_photo</mat-icon>
+                    </a>
+                </div>
+                <mat-divider />
+                <div class="div-btn">
+                    <button mat-raised-button class="btn-voltar" (click)="voltar()">Descartar</button>
+                    <button mat-raised-button color="primary" class="btn-salvar" [disabled]="form.invalid" (click)="salvar()">Publicar</button>
+                </div>
+            </mat-card-content>
+        </form>
+    </mat-card>
+</div>

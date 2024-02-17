@@ -1,1 +1,3 @@
-<p>home works!</p>
+@for(publicacao of publicacaoList(); track publicacao.id) {
+    <div>{{publicacao.texto}}</div>
+}
