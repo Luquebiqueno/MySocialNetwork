@@ -1,0 +1,16 @@
+mat-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    mat-card-title {
+        display: flex; 
+        align-items: center;
+        img {
+            border-radius: 100%;
+            object-fit: cover;
+            width: 33px;
+            height: 33px;
+            margin-right: 10px;
+        }
+    }
+}
